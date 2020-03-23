@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const Jimp= require('jimp');
-const prefix = 'wa';
+
+const prefix = 'ba';
 
 const token = 'NjkxMjExNzQzNTE0MzI5MTMw.XncrHw.knNfbyL0T9c82AA5M-KMKvKGBnk';
 
