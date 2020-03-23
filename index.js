@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const prefix = 'ba';
+const Jimp= require('jimp');
+const prefix = 'wa';
 
 const token = 'NjkxMjExNzQzNTE0MzI5MTMw.XncrHw.knNfbyL0T9c82AA5M-KMKvKGBnk';
 
@@ -8,7 +9,7 @@ bot.on('ready', () => {
   //console.log('Botu o pornit si incepe sa manance cartofi prajiti!');
   console.log(`Salut! ${bot.user.username} e on si o inceput sa consume cartofi prajiti!`);
 
-  bot.user.setActivity('Somalia cum mananca Cartofi prajiti!', { type: 'WATCHING' });
+  bot.user.setActivity('Somalia cum mananca Cartofi prajiti!', { type: 'STREAMING' });
 })
 bot.on('message', message => {
   let args = message.content.substring(prefix.length).split(' ');
@@ -21,10 +22,9 @@ bot.on('message', message => {
       mention = message.mentions.users.first();
       if (args[1] === null) message.channel.send('zi pe cine sa injur fmm!')
       else
-        if (mention == '471568575874859030') message.channel.send('Nu ma fa sa mi injur creatorul,boule!')
-        else if (mention == '689758567653572782') message.channel.send('Hai ca ma injur singur daca e,luate as in yatagan!')
+         if (mention == '689758567653572782') message.channel.send('Hai ca ma injur singur daca e,luate as in yatagan!')
         else {
-          var facts = ["Sa ti fut mortii in fata portii", "Ia mi-l du-mi-l si condu-mi-l!", "Esti un bulanjiu", "do you are have stupid?", "Imi pare rau ca asta o vrut sa te injure...lasa-l sa se calmeze", "N am ce sa zic de tine, te o batut destul viata", "ai fata de spate", "ziceai:'Cu bac sau fara bac semintele acelasi gust are' dar acum nici bani de seminte n ai."];
+          var facts = ["Prima data cand ai vazut aspirator ai zis ca i furnicar","Sa ti fut mortii in fata portii", "Ia mi-l du-mi-l si condu-mi-l!", "Esti un bulanjiu", "do you are have stupid?", "Imi pare rau ca asta o vrut sa te injure...lasa-l sa se calmeze", "N am ce sa zic de tine, te o batut destul viata", "ai fata de spate", "ziceai:'Cu bac sau fara bac semintele acelasi gust are' dar acum nici bani de seminte n ai.","Date n spanac","Dancila man"];
           var fact = Math.floor(Math.random() * facts.length);
           message.channel.send('<@' + mention + '>' + ' ' + facts[fact]);
         }
@@ -44,7 +44,7 @@ bot.on('message', message => {
       break;
     case 'muzica':
       mention = message.mentions.users.first();
-      var muz = ["Adrian Minune", "Jador", "5Gang", "Puya", "Nimeni Altul", "Guta"]
+      var muz = ["Adrian Minune", "Jador", "5Gang", "Puya", "Nimeni Altul", "Guta","Alex Velea","Abi Talent","Nicu de la Cazanesti","Tzanca Uraganu"]
       var mem = Math.floor(Math.random() * muz.length);
       var mem1 = Math.floor(Math.random() * muz.length);
       if (mem != mem1) message.channel.send('Uite ce cantareti asculta ' + '<@' + mention + '>' + ' ' + muz[mem] + ' , ' + muz[mem1]);
@@ -116,9 +116,6 @@ bot.on('message', message => {
           }
         }
       });
-      break;
-    case 'off':
-      message.channel.send("Somalia inchide pc-ul deci ma inchid si eu.Ne mai vedem!");
       break;
   }
 })
