@@ -24,7 +24,7 @@ bot.on('message', message => {
       else
          if (mention == '689758567653572782') message.channel.send('Hai ca ma injur singur daca e,luate as in yatagan!')
         else {
-          var facts = ["Prima data cand ai vazut aspirator ai zis ca i furnicar","Sa ti fut mortii in fata portii", "Ia mi-l du-mi-l si condu-mi-l!", "Esti un bulanjiu", "do you are have stupid?", "Imi pare rau ca asta o vrut sa te injure...lasa-l sa se calmeze", "N am ce sa zic de tine, te o batut destul viata", "ai fata de spate", "ziceai:'Cu bac sau fara bac semintele acelasi gust are' dar acum nici bani de seminte n ai.","Date n spanac","Dancila man"];
+          var facts = ["Prima data cand ai vazut aspirator ai zis ca i furnicar","Sa ti fut mortii in fata portii", "Ia mi-l du-mi-l si condu-mi-l!", "Esti un bulanjiu", "do you are have stupid?", "Imi pare rau ca asta o vrut sa te injure...lasa-l sa se calmeze", "N am ce sa zic de tine, te o batut destul viata", "ai fata de spate", "ziceai:'Cu bac sau fara bac semintele acelasi gust are' dar acum nici bani de seminte n ai.","Date n pula cu satelitu","esti Dancila man,superputerea ta ii prostia","Futa te Soarele","asta de o vrut sa te injure ii mai prost ca tine"];
           var fact = Math.floor(Math.random() * facts.length);
           message.channel.send('<@' + mention + '>' + ' ' + facts[fact]);
         }
@@ -117,6 +117,9 @@ bot.on('message', message => {
         }
       });
       break;
+      case 'chainsaw':
+        message.reply("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+        break;
   }
 })
 bot.login(process.env.token);
