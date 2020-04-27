@@ -39,10 +39,12 @@ bot.on('message', message => {
         message.channel.bulkDelete(args[1]);
         break;
       }
+    case 'hatz':
+      message.channel.send("Hatz gionule ciocanim spre Gangs Romania Roleplay hai si tu!")
       break;
     case 'muzica':
       mention = message.mentions.users.first();
-      var muz = ["Adrian Minune", "Jador", "5Gang", "Alex Velea", "Abi talent", "Guta","Alex Velea","Abi Talent","Nicu de la Cazanesti","Tzanca Uraganu"]
+      var muz = ["Adrian Minune", "Jador", "5Gang", "Puya", "Nimeni Altul", "Guta","Alex Velea","Abi Talent","Nicu de la Cazanesti","Tzanca Uraganu"]
       var mem = Math.floor(Math.random() * muz.length);
       var mem1 = Math.floor(Math.random() * muz.length);
       if (mem != mem1) message.channel.send('Uite ce cantareti asculta ' + '<@' + mention + '>' + ' ' + muz[mem] + ' , ' + muz[mem1]);
@@ -51,50 +53,9 @@ bot.on('message', message => {
     case 'haipesv':
       message.channel.send("@everyone hai pe server!");
       break;
-    case 'factiuni':
-      let guild = await message.guild.fetchMembers();
-      let politie = '699302117604720741';
-      let medici = '699302117604720749';
-      let mafia1 = '699302117600657570';
-      let mafia2 = '699302117596463185';
-      let polo = guild.roles.get(politie).members.size;
-      let medic = guild.roles.get(medici).members.size;
-      let maf1 = guild.roles.get(mafia1).members.size;
-      let maf2 = guild.roles.get(mafia2).members.size;
-  
-      message.channel.send(memberCount + " members have this role!");
-      message.channel.send({
-        embed: {
-          color: '#00fff2',
-          author: {
-            name: bot.user.username,
-            icon_url: bot.user.avatarURL
-          },
-          title: "Aceasta este lista oamenii din factiuni:",
-          fields: [{
-            name: "Politie",
-            value: "In Politie sunt  " + polo + " playeri."
-          },
-          {
-            name: "EMS",
-            value: "In EMS sunt  " + medic + " playeri."
-          },
-          {
-            name: "Despiadado",
-            value: "In despiadado sunt  " + maf1 + " playeri."
-          },
-          {
-            name: "Peaky Blinders",
-            value: "In Peaky Blinders sunt  " + maf2 + " playeri."
-          }
-          ],
-          timestamp: new Date(),
-          footer: {
-            icon_url: bot.user.avatarURL,
-            text: "© Somalia e smeker si detine acest bot!"
-          }
-        }
-      });
+    case 'prezentare':
+      message.reply("Acesta este clipul prezentare al serverului https://www.youtube.com/watch?v=KAsyOgFOFRI.")
+      break;
     case 'help':
       /**let ajutor=new Discord.RichEmbed()
       .setColor('#fff')
