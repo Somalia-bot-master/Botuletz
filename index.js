@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const Canvas = require('canvas');
+/** const Canvas = require('canvas');**/
 const randomPuppy = require('random-puppy');
 const superagent = require('superagent');
 const prefix = 'ba';
@@ -204,7 +204,7 @@ bot.on('message', async message => {
       case 'chainsaw':
         message.reply("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
         break;
-      case 'ricesays':
+      /**case 'ricesays':
         if(args[1]==null)message.channel.send("zi ce sa zica orezu!")
         else
         {
@@ -218,7 +218,6 @@ bot.on('message', async message => {
         ctx.drawImage(background , 0,0, canvas.width,canvas.height);
         /** const background = await loadImage('./rice.png');
         ctx.drawImage(background , 0,0, canvas.width,canvas.height);
-        **/
         
         // Write "Awesome!"
         ctx.font = '40px Sans'
@@ -232,7 +231,7 @@ bot.on('message', async message => {
         case 'jebaited':
       message.channel.send("U got jebaited", { files: ["./test.gif"] });
       message.channel.send({ files: ["./test.gif"] });
-      break;
+      break;**/
        case 'meme':
          let reddit=[
            "dankmemes",
