@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
+const Canvas = require('canvas');
+const randomPuppy = require('random-puppy');
+const superagent = require('superagent');
 const prefix = 'ba';
 
 const token = 'Njg5NzU4NTY3NjUzNTcyNzgy.XqaxMg.W8U218G1ltlAFcHPZfJhXhwlmf0';
@@ -11,7 +13,7 @@ bot.on('ready', () => {
 
   bot.user.setActivity('Somalia cum mananca Cartofi prajiti!', { type: 'STREAMING' });
 })
-bot.on('message', (message) => {
+bot.on('message', async message => {
   let args = message.content.substring(prefix.length).split(' ');
   if(!message.content.startsWith(prefix))return;
   switch (args[0]) {
@@ -60,14 +62,9 @@ bot.on('message', (message) => {
 });
       break;
       case 'factiuni':
-      /** First we use guild.members.fetch to make sure all members are cached
-        message.guild.members.fetch().then(fetchedMembers => {
-        const totalOnline = fetchedMembers.filter(role => role.name === "ownah");
-        console.log(totalOnline);
-        console.log(totalOnline.size);
-          message.channel.send(`**${totalOnline.size}**`);
-          
-}); **/
+        //avoiding a bug that crashes the bot if the server isn t the one it s supposed to be
+        if(message.guild=='699302117571035136')
+        {
         let sias = "699302117600657574";
         let memberssias = message.guild.roles.cache.get(sias).members;
         console.log(`Got ${memberssias.size} members with that role.`);
@@ -125,6 +122,7 @@ bot.on('message', (message) => {
     message.channel.send({
     embed
     })
+  }
       break;
       case 'status':
         mention = message.mentions.users.first();
@@ -206,6 +204,89 @@ bot.on('message', (message) => {
       case 'chainsaw':
         message.reply("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
         break;
+      case 'ricesays':
+        if(args[1]==null)message.channel.send("zi ce sa zica orezu!")
+        else
+        {
+          let args = message.content.substring(prefix.length).split(" ");
+          const command = args.splice(0, 1);
+          let mesaj =args.join(" ");
+        const { createCanvas, loadImage } = require('canvas')
+        const canvas = createCanvas(1756 , 152)
+        const ctx = canvas.getContext('2d')
+        const background =await loadImage('./rice.png');
+        ctx.drawImage(background , 0,0, canvas.width,canvas.height);
+        /** const background = await loadImage('./rice.png');
+        ctx.drawImage(background , 0,0, canvas.width,canvas.height);
+        **/
+        
+        // Write "Awesome!"
+        ctx.font = '40px Sans'
+        ctx.fillStyle ='#fff';
+        ctx.fillText(mesaj , 250, 100)
+        
+        const attachment = new Discord.MessageAttachment(canvas.toBuffer(),"orezazis.png");
+          message.channel.send(attachment);
+        }
+              break;
+        case 'jebaited':
+      message.channel.send("U got jebaited", { files: ["./test.gif"] });
+      message.channel.send({ files: ["./test.gif"] });
+      break;
+       case 'meme':
+         let reddit=[
+           "dankmemes",
+           "pewdiepiesubmissions"
+         ]
+         let subreddit = reddit[Math.floor(Math.random()*reddit.length)];
+         message.channel.startTyping();
+         randomPuppy(subreddit).then(async url => {
+          await message.channel.send({
+              files: [{
+                  attachment: url,
+                  name: 'meme.png'
+              }]
+          }).then(() => message.channel.stopTyping());
+  }).catch(err => console.error(err));
+         break;
+         /**case 'test':
+          bot.emit('guildMemberAdd', message.member);  
+         break;**/
+      
   }
+  /**bot.on('guildMemberAdd', async member => {
+    const channel = member.guild.channels.cache.find(ch => ch.name === '【💬】comenzi-bot');
+    if (!channel) return;
+  
+    const canvas = Canvas.createCanvas(700, 250);
+    const ctx = canvas.getContext('2d');
+  
+    const background = await Canvas.loadImage('./wallpaper.jpg');
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+  
+    ctx.strokeStyle = '#74037b';
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
+  
+    // Slightly smaller text placed above the member's display name
+    ctx.font = '35px Comic Sans MS';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('Bun Venit pe Dunhill Romania,', canvas.width / 3.25, canvas.height / 3);
+  
+    // Add an exclamation point here and below
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText(`${member.displayName}!`, canvas.width / 3, canvas.height / 2);
+  
+    ctx.beginPath();
+    ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.clip();
+  
+    const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+    ctx.drawImage(avatar, 25, 25, 200, 200);
+  
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
+  
+    channel.send(`Bine ai venit pe Dunhill, ${member}!`, attachment);
+  });**/
 })
 bot.login(process.env.token);
