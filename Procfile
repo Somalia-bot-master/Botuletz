@@ -1,1 +1,1 @@
-Worker: node bup.js
+Worker: node index.js
