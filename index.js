@@ -11,7 +11,7 @@ bot.on('ready', () => {
   //console.log('Botu o pornit si incepe sa manance cartofi prajiti!');
   console.log(`Salut! ${bot.user.username} e on si o inceput sa consume cartofi prajiti!`);
 
-  bot.user.setActivity('Somalia cum mananca Cartofi prajiti!', { type: 'STREAMING' });
+  bot.user.setActivity('4 prosti cum scripteaza la Alaska.pubzone.ro', { type: 'WATCHING' });
 })
 bot.on('message', async message => {
   let args = message.content.substring(prefix.length).split(' ');
