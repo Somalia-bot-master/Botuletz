@@ -5,7 +5,7 @@ const randomPuppy = require('random-puppy');
 
 const prefix = 'ba';
 
-const token = 'Njg5NzU4NTY3NjUzNTcyNzgy.XqaxMg.W8U218G1ltlAFcHPZfJhXhwlmf0';
+const token = '';
 
 bot.on('ready', () => {
   //console.log('Botu o pornit si incepe sa manance cartofi prajiti!');
