@@ -55,7 +55,10 @@ bot.on('message', async message => {
       else { var mem1 = Math.floor(Math.random() * muz.length); message.channel.send('Uite ce cantareti asculta ' + '<@' + mention + '>' + ' ' + muz[mem] + ' , ' + muz[mem1]); }
       break;
     case 'haipesv':
+      if(!message.member.permissions.has('ADMINISTRATOR'))return message.reply("Nu ai permisiuni");
+      else {
       message.channel.send("@everyone hai pe server!");
+      }
       break;
     case 'online':
       // First we use guild.members.fetch to make sure all members are cached
