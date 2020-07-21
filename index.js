@@ -18,7 +18,9 @@ bot.on('message', async message => {
   if(!message.content.startsWith(prefix))return;
   switch (args[0]) {
     case 'ip':
-       message.channel.send('Salut!Ip-ul serverului este 109.230.238.168:30598')
+       message.channel.send('Salut, te poti conecta prin 2 posibilitati:
+1.Apasa F8, scriind: connect cfx.re/join/23rp7r
+2.Apasa F8, scriind: connect alaska.pubzone.ro:30156')
     break;
     case 'prezinta-te':
       message.channel.send('Salut!Eu sunt Botu Somalez sunt un bot de discord si functionez pe baza de cartofi prajiti! :))')
@@ -95,7 +97,7 @@ bot.on('message', async message => {
     .addField("Oameni in Politie : ", `${memberspolo.size}`)
     .addField("Oameni in S.i.a.s : ", `${memberssias.size}`)
     .addField("Oameni in Ems : ", `${memberems.size}`)
-    .addField("Oameni in Casa De Papel : ", `${membergypsy.size}`)
+    .addField("Oameni in Cartel Medellin: ", `${membergypsy.size}`)
     .addField("Oameni in Los Aztecas : ", `${memberoras.size}`)
     .setColor('#e67e22')
     message.channel.send({
