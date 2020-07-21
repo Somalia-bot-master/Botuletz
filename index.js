@@ -65,7 +65,7 @@ bot.on('message', async message => {
       break;
       case 'factiuni':
         //avoiding a bug that crashes the bot if the server isn t the one it s supposed to be
-        if(message.guild=='699302117571035136')
+        if(message.guild=='732399654716571719')
         {
         let sias = "699302117600657574";
         let memberssias = message.guild.roles.cache.get(sias).members;
