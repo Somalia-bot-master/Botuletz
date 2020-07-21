@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const Canvas = require('canvas');
 const randomPuppy = require('random-puppy');
 
-const prefix = 'ba';
+const prefix = '1';
 
 const token = '';
 
@@ -17,6 +17,8 @@ bot.on('message', async message => {
   let args = message.content.substring(prefix.length).split(' ');
   if(!message.content.startsWith(prefix))return;
   switch (args[0]) {
+    case 'ip':
+       message.channel.send('Salut!Ip-ul serverului este 109.230.238.168:30598')
     case 'prezinta-te':
       message.channel.send('Salut!Eu sunt Botu Somalez sunt un bot de discord si functionez pe baza de cartofi prajiti! :))')
       break;
@@ -77,33 +79,14 @@ bot.on('message', async message => {
         let memberems = message.guild.roles.cache.get(ems).members;
         console.log(`Got ${memberems.size} members with that role.`);
         //////////////---------------MAFII----------------////////////////////
-        let bdeoras = "699302117596463185";
+        let bdeoras = "732399654741999683";
         let memberoras = message.guild.roles.cache.get(bdeoras).members;
         console.log(`Got ${memberoras.size} members with that role.`);
         //////////////////////////////////
-        let gypsy = "711074084955488297";
+        let gypsy = "732399654745931808";
         let membergypsy = message.guild.roles.cache.get(gypsy).members;
         console.log(`Got ${membergypsy.size} members with that role.`);
         /////////////////////////////////
-        let despacito = "699302117600657570";
-        let memberdespa = message.guild.roles.cache.get(despacito).members;
-        console.log(`Got ${memberdespa.size} members with that role.`);
-        //////////////////////////////////
-        let aterror = "719563293072556173";
-        let memberterror = message.guild.roles.cache.get(aterror).members;
-        console.log(`Got ${memberterror.size} members with that role.`);
-        //////////////////////////////////
-        let bratva = "711073323445911592";
-        let memberb = message.guild.roles.cache.get(bratva).members;
-        console.log(`Got ${memberb.size} members with that role.`);
-        //////////////////////////////////
-        let yakuza = "699302117596463189";
-        let memberyak = message.guild.roles.cache.get(yakuza).members;
-        console.log(`Got ${memberyak.size} members with that role.`);
-        /////////////////////////////////
-        let cdep = "699302117596463193";
-        let casa = message.guild.roles.cache.get(cdep).members;
-        console.log(`Got ${casa.size} members with that role.`);
         ///////////////////////////----------SEND----------////////////////////////////
         var embed = new Discord.MessageEmbed()
     .setTitle("Oameni din Factiuni")
@@ -111,13 +94,8 @@ bot.on('message', async message => {
     .addField("Oameni in Politie : ", `${memberspolo.size}`)
     .addField("Oameni in S.i.a.s : ", `${memberssias.size}`)
     .addField("Oameni in Ems : ", `${memberems.size}`)
-    .addField("Oameni in GypsyKings : ", `${membergypsy.size}`)
-    .addField("Oameni in Yakuza : ", `${memberyak.size}`)
-    .addField("Oameni in BaietiDeOras", `${memberoras.size}`)
-    .addField("Oameni in Casa de Papel : ", `${casa.size}`)
-    .addField("Oameni in Despiadado : ", `${memberdespa.size}`)
-    .addField("Oameni in Bratva : ", `${memberb.size}`)
-    .addField("Oameni in AlliedTerror : ", `${memberterror.size}`)
+    .addField("Oameni in Casa De Papel : ", `${membergypsy.size}`)
+    .addField("Oameni in Los Aztecas : ", `${memberyak.size}`)
     .setColor('#e67e22')
     message.channel.send({
     embed
