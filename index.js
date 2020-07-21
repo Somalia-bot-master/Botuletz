@@ -18,9 +18,7 @@ bot.on('message', async message => {
   if(!message.content.startsWith(prefix))return;
   switch (args[0]) {
     case 'ip':
-       message.channel.send('Salut, te poti conecta prin 2 posibilitati:
-1.Apasa F8, scriind: connect cfx.re/join/23rp7r
-2.Apasa F8, scriind: connect alaska.pubzone.ro:30156')
+       message.channel.send('Salut, te poti conecta prin 2 posibilitati:1.Apasa F8, scriind: connect cfx.re/join/23rp7r 2.Apasa F8, scriind: connect alaska.pubzone.ro:30156')
     break;
     case 'prezinta-te':
       message.channel.send('Salut!Eu sunt Botu Somalez sunt un bot de discord si functionez pe baza de cartofi prajiti! :))')
