@@ -19,6 +19,7 @@ bot.on('message', async message => {
   switch (args[0]) {
     case 'ip':
        message.channel.send('Salut!Ip-ul serverului este 109.230.238.168:30598')
+    break;
     case 'prezinta-te':
       message.channel.send('Salut!Eu sunt Botu Somalez sunt un bot de discord si functionez pe baza de cartofi prajiti! :))')
       break;
@@ -67,15 +68,15 @@ bot.on('message', async message => {
         //avoiding a bug that crashes the bot if the server isn t the one it s supposed to be
         if(message.guild=='732399654716571719')
         {
-        let sias = "699302117600657574";
+        let sias = "732399654758776868";
         let memberssias = message.guild.roles.cache.get(sias).members;
         console.log(`Got ${memberssias.size} members with that role.`);
         ///////////////////////////////////
-        let politie = "699302117604720741";
+        let politie = "732399654767034471";
         let memberspolo = message.guild.roles.cache.get(politie).members;
         console.log(`Got ${memberspolo.size} members with that role.`);
         //////////////////////////////////
-        let ems = "699302117604720749";
+        let ems = "732399654771228694";
         let memberems = message.guild.roles.cache.get(ems).members;
         console.log(`Got ${memberems.size} members with that role.`);
         //////////////---------------MAFII----------------////////////////////
@@ -95,7 +96,7 @@ bot.on('message', async message => {
     .addField("Oameni in S.i.a.s : ", `${memberssias.size}`)
     .addField("Oameni in Ems : ", `${memberems.size}`)
     .addField("Oameni in Casa De Papel : ", `${membergypsy.size}`)
-    .addField("Oameni in Los Aztecas : ", `${memberyak.size}`)
+    .addField("Oameni in Los Aztecas : ", `${memberoras.size}`)
     .setColor('#e67e22')
     message.channel.send({
     embed
