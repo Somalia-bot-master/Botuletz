@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const Canvas = require('canvas');
 const randomPuppy = require('random-puppy');
 
-const prefix = '1';
+const prefix = 'ba';
 
 const token = '';
 
@@ -11,7 +11,7 @@ bot.on('ready', () => {
   //console.log('Botu o pornit si incepe sa manance cartofi prajiti!');
   console.log(`Salut! ${bot.user.username} e on si o inceput sa consume cartofi prajiti!`);
 
-  bot.user.setActivity('4 prosti cum scripteaza la Alaska.pubzone.ro', { type: 'WATCHING' });
+  bot.user.setActivity('She took the kids :(', { type: 'WATCHING' });
 })
 bot.on('message', async message => {
   let args = message.content.substring(prefix.length).split(' ');
@@ -21,7 +21,7 @@ bot.on('message', async message => {
        message.channel.send('Salut, te poti conecta prin 2 posibilitati:1.Apasa F8, scriind: connect cfx.re/join/23rp7r 2.Apasa F8, scriind: connect alaska.pubzone.ro:30156')
     break;
     case 'prezinta-te':
-      message.channel.send('Salut!Eu sunt Botu Somalez sunt un bot de discord si functionez pe baza de cartofi prajiti! :))')
+      message.channel.send('She took the kids :,(')
       break;
     case 'injura':
       mention = message.mentions.users.first();
@@ -234,7 +234,18 @@ bot.on('message', async message => {
          /**case 'test':
           bot.emit('guildMemberAdd', message.member);  
          break;**/
-      
+
+      case 'echo':
+        if(args[1]==null)message.channel.send("zi ce sa zic!")
+        else
+        {
+          let args = message.content.substring(prefix.length).split(" ");
+          const commanda = args.splice(0, 1);
+          let mesj =args.join(" ");
+          message.channel.bulkDelete(1);
+          message.channel.send(mesj)
+}
+break;
   }
   /**bot.on('guildMemberAdd', async member => {
     const channel = member.guild.channels.cache.find(ch => ch.name === '【💬】comenzi-bot');
