@@ -186,6 +186,11 @@ bot.on('message', async message => {
       case 'chainsaw':
         message.reply("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
         break;
+      case 'oof':
+      var facts = ["Large","Omega Oof","Nano Oof","AI DE PULA ME VINE JESUS"]
+          var fact = Math.floor(Math.random() * facts.length);
+          message.channel.send('Oof size:' + ' ' + facts[fact]);
+      break;
       case 'ricesays':
         if(args[1]==null)message.channel.send("zi ce sa zica orezu!")
         else
