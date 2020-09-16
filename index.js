@@ -10,7 +10,7 @@ const token = '';
 bot.on('ready', () => {
   //console.log('Botu o pornit si incepe sa manance cartofi prajiti!');
   console.log(`Salut! ${bot.user.username} e on si o inceput sa consume cartofi prajiti!`);
-  bot.user.setStatus('available')
+  bot.user.setStatus('dnd')
   bot.user.setActivity('She took the kids :(', { type: 'WATCHING' });
 })
 bot.on('message', async message => {
