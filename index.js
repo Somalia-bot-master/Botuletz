@@ -241,6 +241,7 @@ bot.on('message', async message => {
          break;**/
 
       case 'echo':
+	if(!message.member.permissions.has('ADMINISTRATOR'))break;
         if(args[1]==null)message.channel.send("zi ce sa zic!")
         else
         {
